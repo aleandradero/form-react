@@ -1,19 +1,20 @@
-import { StyleSheet, Text, View } from "react-native";
+import { Button, StyleSheet, Text, View } from "react-native";
 
 
 function Index(){
     return(
-        <View>
-            <Text style={{}}>Hello world</Text>
+        <View style={styles.container}>
+            <Text style={styles.text}>Hello, world</Text>
+            <Button title="Enviar"/>
         </View>
     );
 }
 
-const style = StyleSheet.create({
+const styles = StyleSheet.create({
     text: {
-        color: "red",
+        color: "blue",
         fontSize: 26,
-        fontWeight:"bold"
+        fontWeight:"bold",
     },
     container:{
         flex: 1,
