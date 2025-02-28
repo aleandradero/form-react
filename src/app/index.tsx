@@ -1,5 +1,6 @@
 import { StyleSheet, Text, View } from "react-native";
 import Button from "./components/button";
+import Input from "./components/button/input";
 
 
 function Index(){
@@ -11,6 +12,7 @@ function Index(){
     return(
         <View style={styles.container}>
             <Text style={styles.text}>Hello, world</Text>
+            <Input />
             <Button label={"Enviar"} onPress={handleSubmit} activeOpacity={1 }/>
             <Button label={"Continuar"} onPress={handleSubmit}/>
         </View>
