@@ -3,12 +3,11 @@ import styles from "./styles";
 
 type Props = TouchableOpacityProps &{
     label: String;
-    onPress: () => void;
 };
 
 function Button({label, ...rest}:Props){
     return(
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity activeOpacity={0.5} style={styles.button} {...rest}>
             <Text style={styles.label}>{label}</Text>
         </TouchableOpacity>
 
