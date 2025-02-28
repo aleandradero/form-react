@@ -1,18 +1,28 @@
 import { StyleSheet, Text, View } from "react-native";
+import { useState } from "react";
+
 import Button from "./components/button";
 import Input from "./components/button/input";
 
 
 function Index(){
+    const [name, setName] = useState<string>(""); // Tipo explititamente declarado
+    const [name1, setName1] = useState(""); // Inferindo a tipagem 
+
     function handleSubmit(){
         const name ="Alexandra";
         alert(`Olá, ${name}` );
 
     }
+
+function onChangeText(text: string){
+    console.log(text);
+    setName(text); 
+}
     return(
         <View style={styles.container}>
-            <Text style={styles.text}>Hello, world</Text>
-            <Input label="Nome"/>
+            <Text style={styles.text}>Olá, {name}</Text>
+            <Input label="Nome" onChangeText={(text) => onChangeText(text)} />
             <Input label="Idade"/>
             <Button label={"Enviar"} onPress={handleSubmit} activeOpacity={1 }/>
             <Button label={"Continuar"} onPress={handleSubmit}/>
