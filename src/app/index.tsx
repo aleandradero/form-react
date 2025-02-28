@@ -6,15 +6,13 @@ import Input from "./components/button/input";
 
 
 function Index(){
-    const [name, setName] = useState<string>(""); // Tipo explititamente declarado
-    const [name1, setName1] = useState(""); // Inferindo a tipagem 
-
+    const [name, setName] = useState<string>("usuário"); 
+   
     function handleSubmit(){
         const name ="Alexandra";
         alert(`Olá, ${name}` );
 
     }
-
 function onChangeText(text: string){
     console.log(text);
     setName(text); 
@@ -22,7 +20,7 @@ function onChangeText(text: string){
     return(
         <View style={styles.container}>
             <Text style={styles.text}>Olá, {name}</Text>
-            <Input label="Nome" onChangeText={(text) => onChangeText(text)} />
+            <Input label="Nome" onChangeText={setName} />
             <Input label="Idade"/>
             <Button label={"Enviar"} onPress={handleSubmit} activeOpacity={1 }/>
             <Button label={"Continuar"} onPress={handleSubmit}/>
